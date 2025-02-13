@@ -1,14 +1,14 @@
-Descripcion del Proyecto
+# Descripción del Proyecto
 Diagrama Entidad Relacion
-Mario Alfaro Quesada/Jafet Ramirez Gonzalez
+# Mario Alfaro Quesada / Jafet Ramirez Gonzalez
 
 
--- 1️⃣ Creación de la base de datos
+# 1️⃣ Creación de la base de datos
 
 CREATE DATABASE tienda_ropa;
 USE tienda_ropa;
  
--- 2️⃣ Creación de las tablas
+# 2️⃣ Creación de las tablas
 CREATE TABLE marcas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
@@ -31,7 +31,7 @@ CREATE TABLE ventas (
     FOREIGN KEY (prenda_id) REFERENCES prendas(id)
 );
  
--- 3️⃣ Inserción de datos de ejemplo
+# 3️⃣ Inserción de datos de ejemplo
 INSERT INTO marcas (nombre) VALUES ('Nike'), ('Adidas'), ('Puma'), ('Reebok'), ('Under Armour');
  
 INSERT INTO prendas (nombre, marca_id, stock, precio) VALUES
@@ -48,17 +48,17 @@ INSERT INTO ventas (prenda_id, cantidad, fecha) VALUES
 (4, 1, '2024-02-04'),
 (5, 4, '2024-02-05');
  
--- 4️⃣ Eliminación de un dato (Ejemplo: eliminar una prenda específica)
+# 4️⃣ Eliminación de un dato (Ejemplo: eliminar una prenda específica)
 DELETE FROM prendas WHERE id = 5;
  
--- 5️⃣ Actualización de un dato (Ejemplo: actualizar el stock de una prenda)
+# 5️⃣ Actualización de un dato (Ejemplo: actualizar el stock de una prenda)
 UPDATE prendas SET stock = 45 WHERE id = 1;
  
--- 6️⃣ Consultas (SELECT)
+# 6️⃣ Consultas (SELECT)
 -- a) Obtener la cantidad vendida de prendas por fecha filtrada con una fecha específica
 SELECT fecha, SUM(cantidad) AS total_vendido FROM ventas WHERE fecha = '2024-02-01' GROUP BY fecha;
  
--- 7️⃣ Creación de vistas
+# 7️⃣ Creación de vistas
 -- a) Lista de marcas con al menos una venta
 CREATE VIEW marcas_con_ventas AS
 SELECT DISTINCT m.id, m.nombre FROM marcas m
