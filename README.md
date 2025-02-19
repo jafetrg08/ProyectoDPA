@@ -11,5 +11,5 @@ El proyecto consiste en diseñar e implementar una base de datos para una tienda
 
 # Lista de integrantes del proyecto :pushpin:
 
-Jafet Ramirez Gonzalez /
-Mario Alfaro Quesada
+Jafet Ramirez Gonzalez :man_technologist: -
+Mario Alfaro Quesada :man_technologist:
