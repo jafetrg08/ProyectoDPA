@@ -6,7 +6,7 @@ use Slim\App;
 require __DIR__ . '/../controllers/VentasController.php';
 
 return function (App $app) {
-    // Obtener todas las ventas
+
     $app->get('/ventas', function (Request $request, Response $response) {
         $controller = new VentasController();
         $data = $controller->getAll();
@@ -14,7 +14,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Obtener una venta por ID
+
     $app->get('/ventas/{id}', function (Request $request, Response $response, $args) {
         $controller = new VentasController();
         $data = $controller->getById($args['id']);
@@ -23,7 +23,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus($status);
     });
 
-    // Crear una nueva venta
+
     $app->post('/ventas', function (Request $request, Response $response) {
         $controller = new VentasController();
         $data = json_decode($request->getBody()->getContents(), true);
@@ -40,7 +40,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus($status);
     });
 
-    // Actualizar una venta existente
+ 
     $app->put('/ventas/{id}', function (Request $request, Response $response, $args) {
         $controller = new VentasController();
         $id = $args['id'];
@@ -58,7 +58,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus($status);
     });
 
-    // Eliminar una venta
+   
     $app->delete('/ventas/{id}', function (Request $request, Response $response, $args) {
         $controller = new VentasController();
         $id = $args['id'];

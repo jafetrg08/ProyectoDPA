@@ -11,13 +11,13 @@ class VentasController {
         $this->venta = new Venta($this->db);
     }
 
-    // Obtener todas las ventas
+
     public function getAll() {
         $stmt = $this->venta->read();
         return $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     }
 
-    // Obtener una venta por ID
+
     public function getById($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido. Debe ser un número entero positivo."];
@@ -29,7 +29,7 @@ class VentasController {
         return $venta ?: ["error" => "Venta no encontrada."];
     }
 
-    // Crear una nueva venta
+
     public function create($data) {
         if (empty($data['prenda_id']) || empty($data['cantidad']) || empty($data['fecha'])) {
             return ["error" => "Todos los campos (prenda_id, cantidad, fecha) son requeridos."];
@@ -46,7 +46,6 @@ class VentasController {
         }
     }
 
-    // Actualizar una venta existente
     public function update($id, $data) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido."];
@@ -68,7 +67,6 @@ class VentasController {
         }
     }
 
-    // Eliminar una venta
     public function delete($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido."];

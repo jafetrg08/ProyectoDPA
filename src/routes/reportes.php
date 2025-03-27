@@ -5,7 +5,7 @@ use Slim\App;
 require_once __DIR__ . '/../db/Database.php';
 
 return function (App $app) {
-    // Obtener marcas con al menos una venta
+  
     $app->get('/reportes/marcas-con-ventas', function (Request $request, Response $response) {
         $db = new Database();
         $conn = $db->getConnection();
@@ -16,7 +16,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Obtener prendas vendidas y su cantidad restante en stock
+   
     $app->get('/reportes/prendas-vendidas-stock', function (Request $request, Response $response) {
         $db = new Database();
         $conn = $db->getConnection();
@@ -27,7 +27,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Obtener las 5 marcas más vendidas
+  
     $app->get('/reportes/top-5-marcas', function (Request $request, Response $response) {
         $db = new Database();
         $conn = $db->getConnection();

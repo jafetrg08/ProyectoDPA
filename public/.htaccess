@@ -3,7 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
-# 🔥 Permitir métodos PUT y DELETE
 <IfModule mod_rewrite.c>
     RewriteCond %{REQUEST_METHOD} ^(PUT|DELETE)$
     RewriteRule .* - [L]

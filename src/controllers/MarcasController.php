@@ -11,13 +11,11 @@ class MarcasController {
         $this->marca = new Marca($this->db);
     }
 
-    // Obtener todas las marcas
     public function getAll() {
         $stmt = $this->marca->read();
         return $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     }
 
-    // Obtener una marca por ID
     public function getById($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido. Debe ser un número entero positivo."];
@@ -29,7 +27,7 @@ class MarcasController {
         return $marca ?: ["error" => "Marca no encontrada."];
     }
 
-    // Crear una nueva marca
+  
     public function create($data) {
         if (empty($data['nombre'])) {
             return ["error" => "El nombre de la marca es requerido."];
@@ -44,7 +42,6 @@ class MarcasController {
         }
     }
 
-    // Actualizar una marca existente
     public function update($id, $data) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido."];
@@ -64,7 +61,6 @@ class MarcasController {
         }
     }
 
-    // Eliminar una marca
     public function delete($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido."];

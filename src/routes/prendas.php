@@ -6,7 +6,7 @@ use Slim\App;
 require __DIR__ . '/../controllers/PrendasController.php';
 
 return function (App $app) {
-    // Ruta GET para todas las prendas
+
     $app->get('/prendas', function (Request $request, Response $response) {
         $controller = new PrendasController();
         $data = $controller->getAll();
@@ -14,7 +14,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Ruta GET para una prenda por ID
+    
     $app->get('/prendas/{id}', function (Request $request, Response $response, $args) {
         $controller = new PrendasController();
         $data = $controller->getById($args['id']);
@@ -29,7 +29,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Ruta POST para crear una nueva prenda
+   
     $app->post('/prendas', function (Request $request, Response $response) {
         $controller = new PrendasController();
         $data = json_decode($request->getBody()->getContents(), true);
@@ -57,7 +57,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
     });
 
-    // 🆕 Ruta PUT para actualizar una prenda
+    
     $app->put('/prendas/{id}', function (Request $request, Response $response, $args) {
         $controller = new PrendasController();
         $id = $args['id'];
@@ -80,7 +80,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // 🗑️ Ruta DELETE para eliminar una prenda
+    
     $app->delete('/prendas/{id}', function (Request $request, Response $response, $args) {
         $controller = new PrendasController();
         $id = $args['id'];

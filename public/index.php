@@ -1,17 +1,17 @@
 <?php
 use Slim\Factory\AppFactory;
 
-require __DIR__ . '/../vendor/autoload.php'; // Cargar Slim
+require __DIR__ . '/../vendor/autoload.php'; 
 
-$app = AppFactory::create(); // Crear instancia de la app
+$app = AppFactory::create(); 
 
-$app->addBodyParsingMiddleware(); // ✅ Manejar JSON en PUT y DELETE
-$app->addRoutingMiddleware(); // ✅ Asegura que Slim maneja las rutas correctamente
-$app->addErrorMiddleware(true, true, true); // ✅ Manejo de errores
+$app->addBodyParsingMiddleware(); 
+$app->addRoutingMiddleware(); 
+$app->addErrorMiddleware(true, true, true); 
 
-(require __DIR__ . '/../src/routes/prendas.php')($app); // Cargar rutas de prendas
-(require __DIR__ . '/../src/routes/marcas.php')($app); // Cargar rutas de marcas
-(require __DIR__ . '/../src/routes/ventas.php')($app); // ✅ Cargar rutas de ventas
-(require __DIR__ . '/../src/routes/reportes.php')($app); // ✅ Cargar rutas de reportes
+(require __DIR__ . '/../src/routes/prendas.php')($app); 
+(require __DIR__ . '/../src/routes/marcas.php')($app); 
+(require __DIR__ . '/../src/routes/ventas.php')($app);  
+(require __DIR__ . '/../src/routes/reportes.php')($app);  
 
 $app->run(); // Ejecutar la aplicación

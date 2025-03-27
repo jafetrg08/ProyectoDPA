@@ -11,13 +11,13 @@ class PrendasController {
         $this->prenda = new Prenda($this->db);
     }
 
-    // Obtener todas las prendas
+
     public function getAll() {
         $stmt = $this->prenda->read();
         return $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     }
 
-    // Obtener una prenda por ID
+
     public function getById($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido. Debe ser un número entero positivo."];
@@ -29,7 +29,6 @@ class PrendasController {
         return $prenda ?: ["error" => "Prenda no encontrada."];
     }
 
-    // Crear una nueva prenda
     public function create($data) {
         file_put_contents('debug.log', print_r($data, true));
 
@@ -57,7 +56,6 @@ class PrendasController {
         }
     }
 
-    // Actualizar una prenda existente
     public function update($id, $data) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido. Debe ser un número entero positivo."];
@@ -88,7 +86,6 @@ class PrendasController {
         }
     }
 
-    // Eliminar una prenda
     public function delete($id) {
         if (!is_numeric($id) || intval($id) <= 0) {
             return ["error" => "ID inválido. Debe ser un número entero positivo."];

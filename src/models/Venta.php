@@ -14,7 +14,7 @@ class Venta {
         $this->conn = $db;
     }
 
-    // Obtener todas las ventas
+
     public function read() {
         $query = "SELECT * FROM " . $this->table_name;
         $stmt = $this->conn->prepare($query);
@@ -22,7 +22,7 @@ class Venta {
         return $stmt;
     }
 
-    // Obtener una venta por ID
+
     public function read_single($id) {
         $query = "SELECT * FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->conn->prepare($query);
@@ -31,7 +31,7 @@ class Venta {
         return $stmt;
     }
 
-    // Crear una nueva venta
+  
     public function create() {
         $query = "INSERT INTO " . $this->table_name . " (prenda_id, cantidad, fecha) VALUES (:prenda_id, :cantidad, :fecha)";
         $stmt = $this->conn->prepare($query);
@@ -43,7 +43,7 @@ class Venta {
         return $stmt->execute();
     }
 
-    // Actualizar una venta existente
+
     public function update() {
         $query = "UPDATE " . $this->table_name . " SET prenda_id = :prenda_id, cantidad = :cantidad, fecha = :fecha WHERE id = :id";
         $stmt = $this->conn->prepare($query);
@@ -56,7 +56,7 @@ class Venta {
         return $stmt->execute();
     }
 
-    // Eliminar una venta
+
     public function delete($id) {
         $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->conn->prepare($query);

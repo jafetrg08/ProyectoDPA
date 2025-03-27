@@ -6,7 +6,7 @@ use Slim\App;
 require __DIR__ . '/../controllers/MarcasController.php';
 
 return function (App $app) {
-    // Ruta GET para todas las marcas
+
     $app->get('/marcas', function (Request $request, Response $response) {
         $controller = new MarcasController();
         $data = $controller->getAll();
@@ -14,7 +14,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Ruta GET para una marca por ID
+   
     $app->get('/marcas/{id}', function (Request $request, Response $response, $args) {
         $controller = new MarcasController();
         $data = $controller->getById($args['id']);
@@ -29,7 +29,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Ruta POST para crear una nueva marca
+  
     $app->post('/marcas', function (Request $request, Response $response) {
         $controller = new MarcasController();
         $data = json_decode($request->getBody()->getContents(), true);
@@ -50,7 +50,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
     });
 
-    // Ruta PUT para actualizar una marca
+  
     $app->put('/marcas/{id}', function (Request $request, Response $response, $args) {
         $controller = new MarcasController();
         $id = $args['id'];
@@ -72,7 +72,7 @@ return function (App $app) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     });
 
-    // Ruta DELETE para eliminar una marca
+  
     $app->delete('/marcas/{id}', function (Request $request, Response $response, $args) {
         $controller = new MarcasController();
         $id = $args['id'];
