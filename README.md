@@ -29,15 +29,6 @@ Estructura principal:
 | `PUT` | `/prendas/{id}` | Actualizar prenda |
 | `DELETE` | `/prendas/{id}` | Eliminar prenda |
 
-**Ejemplo POST**:
-```json
-{
-  "nombre": "Camiseta",
-  "marca_id": 1,
-  "stock": 50,
-  "precio": 19.99
-}
-
 🏷️ Marcas
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
@@ -62,3 +53,12 @@ Estructura principal:
 | `GET` | `/reportes/marcas-con-ventas` | Marcas con al menos una venta |
 | `GET` | `/reportes/prendas-vendidas-stock` | Prendas vendidas con stock restante |
 | `GET` | `/reportes/top-5-marcas` | Top 5 marcas más vendidas |
+
+**Ejemplo POST**:
+```json
+{
+  "nombre": "Camiseta",
+  "marca_id": 1,
+  "stock": 50,
+  "precio": 19.99
+}
