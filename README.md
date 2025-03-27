@@ -1,6 +1,6 @@
 # Archivo readme :file_folder:
-# Descripción del proyecto. :memo:
 
+# Descripción del proyecto. :memo:
 El proyecto consiste en diseñar e implementar una base de datos para una tienda de ropa, junto con el desarrollo de un API que permita interactuar con dicha base de datos. El objetivo es gestionar de manera eficiente la información relacionada con las prendas de ropa, las marcas, el inventario (stock), las ventas y otros aspectos relevantes de la tienda. A continuación, se detallan los componentes principales del proyecto:
 
 
@@ -8,11 +8,16 @@ El proyecto consiste en diseñar e implementar una base de datos para una tienda
 
 <img width="558" alt="image" src="https://github.com/user-attachments/assets/d01f3daa-492d-48c6-b27d-3961f0d0f663" />
 
+Estructura principal:
+- `prendas` (id, nombre, marca_id, stock, precio)
+- `marcas` (id, nombre)
+- `ventas` (id, prenda_id, cantidad, fecha)
 
-# Integrantes del proyecto :pushpin:
-
-Jafet Ramirez Gonzalez :man_technologist: -
-Mario Alfaro Quesada :man_technologist:
+## 👥 Equipo
+| Rol | Integrante |
+|------|------------|
+| Desarrollador | Jafet Ramirez Gonzalez :man_technologist: -
+| Desarrollador | Mario Alfaro Quesada :man_technologist:
 
 
 ENDPOINTS API
@@ -35,3 +40,29 @@ ENDPOINTS API
   "stock": 50,
   "precio": 19.99
 }
+
+🏷️ Marcas
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| `GET` | `/marcas` | Obtener todas las maarcas |
+| `GET` | `/marcas/{id}` | Obtener marca por ID |
+| `POST` | `/marcas` | Crear nueva marca |
+| `PUT` | `/marcas/{id}` | Actualizar marca |
+| `DELETE` | `/marcas/{id}` | Eliminar marca |
+
+💰 Ventas
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| `GET` | `/ventas` | Obtener todas las ventas |
+| `GET` | `/ventas/{id}` | Obtener venta por ID |
+| `POST` | `/ventas` | Crear nueva venta |
+| `PUT` | `/ventas/{id}` | Actualizar venta |
+| `DELETE` | `/ventas/{id}` | Eliminar venta |
+
+📊 Reportes
+💰 Ventas
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| `GET` | `/reportes/marcas-con-ventas` | Marcas con al menos una venta |
+| `GET` | `/reportes/prendas-vendidas-stock` | Prendas vendidas con stock restante |
+| `GET` | `/reportes/top-5-marcas` | Top 5 marcas más vendidas |
