@@ -16,11 +16,8 @@ Estructura principal:
 ## 👥 Equipo
 | Rol | Integrante |
 |------|------------|
-| Desarrollador | Jafet Ramirez Gonzalez :man_technologist: -
+| Desarrollador | Jafet Ramirez Gonzalez :man_technologist: 
 | Desarrollador | Mario Alfaro Quesada :man_technologist:
-
-
-ENDPOINTS API
 
 ## 🔌 Endpoints API
 ### 🧥 Prendas
@@ -60,7 +57,6 @@ ENDPOINTS API
 | `DELETE` | `/ventas/{id}` | Eliminar venta |
 
 📊 Reportes
-💰 Ventas
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
 | `GET` | `/reportes/marcas-con-ventas` | Marcas con al menos una venta |
